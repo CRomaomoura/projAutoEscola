@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.br.fjn.projautoescola.domain.repositories;
+package edu.br.fjn.projautoescola.domain.pagamento;
 
 /**
  *
- * @author romao
+ * @author lucas
  */
-public class ClienteRepository {
-    
+public enum FormaPagamento {
+    DEBITO,CREDITO,CARNE,DINHEIRO; 
 }

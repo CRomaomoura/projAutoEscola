@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.br.fjn.projautoescola.domain.enums;
+package edu.br.fjn.projautoescola.domain.contato;
 
 /**
  *
  * @author lucas
  */
-public enum Escolaridade {
-    MEDIO_INCOMPLETO, MEDIO_COMPLETO, SUPERIOR_INCOMPLETO, SUPERIOR_COMPLETO;
+public enum TipoContato {
+    RESIDENCIAL,CELULAR;
 }

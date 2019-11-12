@@ -3,12 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.br.fjn.projautoescola.domain.enums;
+package edu.br.fjn.projautoescola.domain.documento;
 
 /**
  *
  * @author lucas
  */
-public enum TipoContato {
-    RESIDENCIAL,CELULAR;
+public enum TipoDocumento {
+    CARTEIRA_ESTRANGEIRO,RG,CPTS, RESERVISTA,PASSAPORTE;
 }
