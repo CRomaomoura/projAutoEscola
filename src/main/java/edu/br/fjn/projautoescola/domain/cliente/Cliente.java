@@ -1,4 +1,4 @@
-package edu.br.fjn.projautoescola.domain.entities;
+package edu.br.fjn.projautoescola.domain.cliente;
 
 import java.io.Serializable;
 import javax.persistence.Entity;
