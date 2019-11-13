@@ -4,6 +4,7 @@ import edu.br.fjn.projautoescola.domain.contato.Contato;
 import edu.br.fjn.projautoescola.domain.dadosnascimento.DadosNascimento;
 import edu.br.fjn.projautoescola.domain.documento.Documento;
 import edu.br.fjn.projautoescola.domain.endereco.Endereco;
+import edu.br.fjn.projautoescola.domain.pagamento.Pagamento;
 import java.io.Serializable;
 import java.util.Objects;
 import javax.persistence.Column;
@@ -23,51 +24,51 @@ import javax.persistence.SequenceGenerator;
  */
 @Entity
 public class Cliente implements Serializable {
-  private static final long serialVersionUID = 1L;
-  
-  
+
+    private static final long serialVersionUID = 1L;
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_gerador")
     @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idCliente", name = "id_gerador")
     private Long idCliente;
-    
+
     @Column(nullable = false)
     private String nome;
-    
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Escolaridade escolaridade;
-    
+
     @Column(nullable = false)
     private String profissao;
-    
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private CategoriaPretendida categoria;
-    
+
     @Column(nullable = false)
     private String cpf;
-    
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private EstadoCivil estadoCivil;
-    
+
     //desda linha abaixo ficará as associativas 
     @OneToOne(mappedBy = "dados_cliente")
     private DadosNascimento dadosNascimento;
-    
+
     @OneToOne
     private Endereco endereco;
-    
+
     @OneToMany
     private Contato contato;
-    
+
     @OneToMany
     private Documento documento;
-    
-   // private Pagamento pagamento;
 
-        public Cliente() {
+    private Pagamento pagamento;
+
+    public Cliente() {
     }
 
     public Cliente(Long idCliente, String nome, Escolaridade escolaridade, String profissao, CategoriaPretendida categoria, String cpf, EstadoCivil estadoCivil, DadosNascimento dadosNascimento) {
