@@ -30,29 +30,29 @@ public class DadosNascimento implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_doc")
-    @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idDocumento", name = "id_doc")
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_dados")
+    @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idDadosNasc", name = "id_dados")
     private Long id;
-    
+
     @Column(nullable = false)
     private String localNascimento;
-    
+
     @Column(nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataNascimento;
-    
+
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private Nacionalidade nacionalidade;
-    
+
     @Column(nullable = false)
     private String nomeMae;
-    
+
     @Column(nullable = false)
     private String nomePai;
-    
+
     @OneToOne
-    private Cliente dadosCliente; 
+    private Cliente dadosCliente;
 
     public DadosNascimento() {
     }
@@ -112,6 +112,14 @@ public class DadosNascimento implements Serializable {
 
     public void setNomePai(String nomePai) {
         this.nomePai = nomePai;
+    }
+
+    public Cliente getDadosCliente() {
+        return dadosCliente;
+    }
+
+    public void setDadosCliente(Cliente dadosCliente) {
+        this.dadosCliente = dadosCliente;
     }
 
     @Override

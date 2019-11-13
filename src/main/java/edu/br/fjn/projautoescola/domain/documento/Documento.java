@@ -101,6 +101,15 @@ public class Documento implements Serializable {
         this.dataEmissao = dataEmissao;
     }
 
+    public Cliente getDocCliente() {
+        return docCliente;
+    }
+
+    public void setDocCliente(Cliente docCliente) {
+        this.docCliente = docCliente;
+    }
+    
+
     @Override
     public int hashCode() {
         int hash = 7;
