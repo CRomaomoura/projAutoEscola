@@ -6,6 +6,7 @@ import edu.br.fjn.projautoescola.domain.documento.Documento;
 import edu.br.fjn.projautoescola.domain.endereco.Endereco;
 import edu.br.fjn.projautoescola.domain.pagamento.Pagamento;
 import java.io.Serializable;
+import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -54,7 +55,7 @@ public class Cliente implements Serializable {
     private EstadoCivil estadoCivil;
 
     //desda linha abaixo ficará as associativas 
-    @OneToOne(mappedBy = "dados_cliente")
+    @OneToOne(mappedBy = "dadosCliente")
     private DadosNascimento dadosNascimento;
 
     @OneToOne
@@ -63,9 +64,10 @@ public class Cliente implements Serializable {
     @OneToMany
     private Contato contato;
 
-    @OneToMany
-    private Documento documento;
+    @OneToMany(mappedBy = "docCliente")
+    private List<Documento> documentos;
 
+    @OneToMany
     private Pagamento pagamento;
 
     public Cliente() {

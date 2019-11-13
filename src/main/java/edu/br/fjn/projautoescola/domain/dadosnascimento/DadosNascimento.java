@@ -5,11 +5,19 @@
  */
 package edu.br.fjn.projautoescola.domain.dadosnascimento;
 
+import edu.br.fjn.projautoescola.domain.cliente.Cliente;
 import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
+import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
+import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 
 /**
@@ -22,19 +30,35 @@ public class DadosNascimento implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    private Long idDados;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_doc")
+    @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idDocumento", name = "id_doc")
+    private Long id;
+    
+    @Column(nullable = false)
     private String localNascimento;
+    
+    @Column(nullable = false)
     @Temporal(javax.persistence.TemporalType.DATE)
     private Date dataNascimento;
+    
+    @Column(nullable = false)
+    @Enumerated(EnumType.STRING)
     private Nacionalidade nacionalidade;
+    
+    @Column(nullable = false)
     private String nomeMae;
+    
+    @Column(nullable = false)
     private String nomePai;
+    
+    @OneToOne
+    private Cliente dadosCliente; 
 
     public DadosNascimento() {
     }
 
-    public DadosNascimento(Long idDados, String localNascimento, Date dataNascimento, Nacionalidade nacionalidade, String nomeMae, String nomePai) {
-        this.idDados = idDados;
+    public DadosNascimento(Long id, String localNascimento, Date dataNascimento, Nacionalidade nacionalidade, String nomeMae, String nomePai) {
+        this.id = id;
         this.localNascimento = localNascimento;
         this.dataNascimento = dataNascimento;
         this.nacionalidade = nacionalidade;
@@ -42,12 +66,12 @@ public class DadosNascimento implements Serializable {
         this.nomePai = nomePai;
     }
 
-    public Long getIdDados() {
-        return idDados;
+    public Long getId() {
+        return id;
     }
 
-    public void setIdDados(Long idDados) {
-        this.idDados = idDados;
+    public void setId(Long id) {
+        this.id = id;
     }
 
     public String getLocalNascimento() {
@@ -108,10 +132,7 @@ public class DadosNascimento implements Serializable {
             return false;
         }
         final DadosNascimento other = (DadosNascimento) obj;
-        if (!Objects.equals(this.idDados, other.idDados)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.id, other.id);
     }
 
 }
