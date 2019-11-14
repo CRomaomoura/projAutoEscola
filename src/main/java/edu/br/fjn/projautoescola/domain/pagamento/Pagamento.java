@@ -34,7 +34,7 @@ public class Pagamento implements Serializable {
     @GeneratedValue(generator = "id_pagamento", strategy = GenerationType.SEQUENCE)
     @Id
     @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idPagamento", name = "id_pagamento")
-    private int id;
+    private Integer id;
     @Column(nullable = false)
     private double valor;
 

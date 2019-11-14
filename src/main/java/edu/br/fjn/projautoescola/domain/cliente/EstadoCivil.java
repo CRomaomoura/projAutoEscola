@@ -10,5 +10,5 @@ package edu.br.fjn.projautoescola.domain.cliente;
  * @author lucas
  */
 public enum EstadoCivil {
-    
+    CASADO,SOLTEIRO,DIVORCIADO;
 }

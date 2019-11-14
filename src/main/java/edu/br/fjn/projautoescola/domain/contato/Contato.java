@@ -24,7 +24,7 @@ public class Contato implements Serializable{
     @GeneratedValue(strategy = GenerationType.SEQUENCE,generator = "codigo_contato")
     @SequenceGenerator(initialValue = 1,allocationSize = 1,sequenceName ="seq_codigoContato", name = "codigo_contato")
     @Id
-    private int codigo;
+    private Integer codigo;
     
     @Enumerated(EnumType.STRING)
     @Column(nullable = false)

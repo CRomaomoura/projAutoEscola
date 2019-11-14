@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.br.fjn.projautoescola.domain.enums;
+package edu.br.fjn.projautoescola.domain.cliente;
 
 /**
  *

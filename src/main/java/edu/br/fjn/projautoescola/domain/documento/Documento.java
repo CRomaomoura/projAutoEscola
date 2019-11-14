@@ -25,7 +25,6 @@ import javax.persistence.Temporal;
 @Entity
 public class Documento implements Serializable {
     private static final long serialVersionUID = 1L;
-
     
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_doc")
@@ -59,7 +58,6 @@ public class Documento implements Serializable {
         this.dataEmissao = dataEmissao;
         this.docCliente = docCliente;
     }
-
     
     public Long getId() {
         return id;
