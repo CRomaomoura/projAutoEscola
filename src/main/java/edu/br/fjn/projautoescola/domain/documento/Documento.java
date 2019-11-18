@@ -60,7 +60,7 @@ public class Documento implements Serializable {
     }
     
     public Long getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(Long id) {
@@ -68,7 +68,7 @@ public class Documento implements Serializable {
     }
 
     public TipoDocumento getTipo() {
-        return tipo;
+        return this.tipo;
     }
 
     public void setTipo(TipoDocumento tipo) {
@@ -76,7 +76,7 @@ public class Documento implements Serializable {
     }
 
     public String getNumero() {
-        return numero;
+        return this.numero;
     }
 
     public void setNumero(String numero) {
@@ -84,7 +84,7 @@ public class Documento implements Serializable {
     }
 
     public String getOrgaoEmissor() {
-        return orgaoEmissor;
+        return this.orgaoEmissor;
     }
 
     public void setOrgaoEmissor(String orgaoEmissor) {
@@ -92,7 +92,7 @@ public class Documento implements Serializable {
     }
 
     public Date getDataEmissao() {
-        return dataEmissao;
+        return this.dataEmissao;
     }
 
     public void setDataEmissao(Date dataEmissao) {
@@ -100,7 +100,7 @@ public class Documento implements Serializable {
     }
 
     public Cliente getDocCliente() {
-        return docCliente;
+        return this.docCliente;
     }
 
     public void setDocCliente(Cliente docCliente) {
@@ -123,14 +123,11 @@ public class Documento implements Serializable {
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (this.getClass() != obj.getClass()) {
             return false;
         }
         final Documento other = (Documento) obj;
-        if (!Objects.equals(this.id, other.id)) {
-            return false;
-        }
-        return true;
+        return Objects.equals(this.id, other.id);
     }
     
     

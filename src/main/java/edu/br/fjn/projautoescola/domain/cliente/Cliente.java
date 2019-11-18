@@ -113,7 +113,7 @@ public class Cliente implements Serializable {
     }
 
     public String getProfissao() {
-        return profissao;
+        return this.profissao;
     }
 
     public void setProfissao(String profissao) {
@@ -121,7 +121,7 @@ public class Cliente implements Serializable {
     }
 
     public CategoriaPretendida getCategoria() {
-        return categoria;
+        return this.categoria;
     }
 
     public void setCategoria(CategoriaPretendida categoria) {
@@ -129,7 +129,7 @@ public class Cliente implements Serializable {
     }
 
     public String getCpf() {
-        return cpf;
+        return this.cpf;
     }
 
     public void setCpf(String cpf) {
@@ -137,7 +137,7 @@ public class Cliente implements Serializable {
     }
 
     public EstadoCivil getEstadoCivil() {
-        return estadoCivil;
+        return this.estadoCivil;
     }
 
     public void setEstadoCivil(EstadoCivil estadoCivil) {
@@ -145,7 +145,7 @@ public class Cliente implements Serializable {
     }
 
     public List<DadosNascimento> getDadosNascimento() {
-        return dadosNascimento;
+        return this.dadosNascimento;
     }
 
     public void setDadosNascimento(List<DadosNascimento> dadosNascimento) {
@@ -153,7 +153,7 @@ public class Cliente implements Serializable {
     }
 
     public List<Endereco> getEndereco() {
-        return endereco;
+        return this.endereco;
     }
 
     public void setEndereco(List<Endereco> endereco) {
@@ -161,7 +161,7 @@ public class Cliente implements Serializable {
     }
 
     public List<Contato> getContato() {
-        return contato;
+        return this.contato;
     }
 
     public void setContato(List<Contato> contato) {
@@ -199,7 +199,7 @@ public class Cliente implements Serializable {
         if (obj == null) {
             return false;
         }
-        if (getClass() != obj.getClass()) {
+        if (this.getClass() != obj.getClass()) {
             return false;
         }
         final Cliente other = (Cliente) obj;

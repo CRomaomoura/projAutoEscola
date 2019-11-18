@@ -5,6 +5,7 @@
  */
 package edu.br.fjn.projautoescola.domain.pagamento;
 
+import edu.br.fjn.projautoescola.domain.cliente.Cliente;
 import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -13,6 +14,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
 /**
@@ -21,10 +23,11 @@ import javax.persistence.SequenceGenerator;
  */
 @Entity
 public class Pagamento implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
-    public Pagamento(){
-    
+    public Pagamento() {
+
     }
 
     public Pagamento(double valor, FormaPagamento formaPagamento) {
@@ -41,9 +44,16 @@ public class Pagamento implements Serializable {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private FormaPagamento formaPagamento;
+    @Column(nullable = false)
+    @ManyToOne
+    private Cliente pag_Cliente;
+
+    public Cliente getPag_Cliente() {
+        return this.pag_Cliente;
+    }
 
     public int getId() {
-        return id;
+        return this.id;
     }
 
     public void setId(int id) {
@@ -51,7 +61,7 @@ public class Pagamento implements Serializable {
     }
 
     public double getValor() {
-        return valor;
+        return this.valor;
     }
 
     public void setValor(double valor) {
@@ -59,7 +69,7 @@ public class Pagamento implements Serializable {
     }
 
     public FormaPagamento getFormaPagamento() {
-        return formaPagamento;
+        return this.formaPagamento;
     }
 
     public void setFormaPagamento(FormaPagamento formaPagamento) {
