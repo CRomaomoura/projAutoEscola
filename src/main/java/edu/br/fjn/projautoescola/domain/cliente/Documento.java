@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.br.fjn.projautoescola.domain.documento;
+package edu.br.fjn.projautoescola.domain.cliente;
 
 import edu.br.fjn.projautoescola.domain.cliente.Cliente;
 import java.io.Serializable;
@@ -27,7 +27,7 @@ public class Documento implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_doc")
-    @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idDocumento", name = "id_doc")
+    @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_id", name = "id_doc")
     private Integer id;
 
     @Column(nullable = false)

@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.br.fjn.projautoescola.domain.dadosnascimento;
+package edu.br.fjn.projautoescola.domain.cliente;
 
 import java.io.Serializable;
 import java.util.Date;
@@ -28,7 +28,7 @@ public class DadosNascimento implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_dados")
-    @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idDadosNasc", name = "id_dados")
+    @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_id", name = "id_dados")
     private Integer id;
 
     @Column(nullable = false)

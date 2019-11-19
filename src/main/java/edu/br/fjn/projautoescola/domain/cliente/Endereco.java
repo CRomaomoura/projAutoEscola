@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.br.fjn.projautoescola.domain.endereco;
+package edu.br.fjn.projautoescola.domain.cliente;
 
 import edu.br.fjn.projautoescola.domain.cliente.Cliente;
 import java.io.Serializable;
@@ -26,7 +26,7 @@ public class Endereco implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_end")
-    @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idEndereco", name = "id_end")
+    @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_id", name = "id_end")
     private Integer id;
 
     @Column(nullable = false)

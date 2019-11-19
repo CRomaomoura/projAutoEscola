@@ -1,11 +1,7 @@
 package edu.br.fjn.projautoescola.domain.cliente;
 
 import edu.br.fjn.projautoescola.domain.contato.Contato;
-import edu.br.fjn.projautoescola.domain.dadosnascimento.DadosNascimento;
-import edu.br.fjn.projautoescola.domain.documento.Documento;
-import edu.br.fjn.projautoescola.domain.endereco.Endereco;
 import java.io.Serializable;
-import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -26,9 +22,9 @@ public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_ger_cliente")
-    @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idCliente", name = "id_ger_cliente")
-    private Integer idCliente;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_ger")
+    @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_id", name = "id_ger")
+    private Integer id;
 
     @Column(nullable = false)
     private String nome;
@@ -52,23 +48,23 @@ public class Cliente implements Serializable {
     private EstadoCivil estadoCivil;
 
     //desda linha abaixo ficará as associativas 
-    @OneToOne(mappedBy = "dados_cliente")
+    @OneToOne
     private DadosNascimento dadosNascimento;
 
-    @OneToOne(mappedBy = "endereco_cliente")
+    @OneToOne
     private Endereco endereco;
 
-    @OneToOne(mappedBy = "cliente_contato")
+    @OneToOne
     private Contato contato;
 
-    @OneToOne(mappedBy = "cliente_doc")
+    @OneToOne
     private Documento documentos;
 
     public Cliente() {
     }
 
-    public Cliente(Integer idCliente, String nome, Escolaridade escolaridade, String profissao, CategoriaPretendida categoria, String cpf, EstadoCivil estadoCivil) {
-        this.idCliente = idCliente;
+    public Cliente(Integer id, String nome, Escolaridade escolaridade, String profissao, CategoriaPretendida categoria, String cpf, EstadoCivil estadoCivil) {
+        this.id = id;
         this.nome = nome;
         this.escolaridade = escolaridade;
         this.profissao = profissao;
@@ -78,12 +74,12 @@ public class Cliente implements Serializable {
      
     }
   
-    public Integer getIdCliente() {
-        return this.idCliente;
+    public Integer getId() {
+        return this.id;
     }
 
-    public void setIdCliente(Integer idCliente) {
-        this.idCliente = idCliente;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public String getNome() {
@@ -167,28 +163,28 @@ public class Cliente implements Serializable {
     }
     
  
-    @Override
-    public int hashCode() {
-        int hash = 5;
-        return hash;
-    }
-
-    @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (this.getClass() != obj.getClass()) {
-            return false;
-        }
-        final Cliente other = (Cliente) obj;
-        if (!Objects.equals(this.cpf, other.cpf)) {
-            return false;
-        }
-        return Objects.equals(this.idCliente, other.idCliente);
-    }
+//    @Override
+//    public int hashCode() {
+//        int hash = 5;
+//        return hash;
+//    }
+//
+//    @Override
+//    public boolean equals(Object obj) {
+//        if (this == obj) {
+//            return true;
+//        }
+//        if (obj == null) {
+//            return false;
+//        }
+//        if (this.getClass() != obj.getClass()) {
+//            return false;
+//        }
+//        final Cliente other = (Cliente) obj;
+//        if (!Objects.equals(this.cpf, other.cpf)) {
+//            return false;
+//        }
+//        return Objects.equals(this.id, other.id);
+//    }
 
 }
