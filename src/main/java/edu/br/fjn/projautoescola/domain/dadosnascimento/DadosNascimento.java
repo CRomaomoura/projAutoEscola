@@ -5,10 +5,8 @@
  */
 package edu.br.fjn.projautoescola.domain.dadosnascimento;
 
-import edu.br.fjn.projautoescola.domain.cliente.Cliente;
 import java.io.Serializable;
 import java.util.Date;
-import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -16,7 +14,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 import javax.persistence.Temporal;
 
@@ -32,7 +29,7 @@ public class DadosNascimento implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_dados")
     @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idDadosNasc", name = "id_dados")
-    private Long id;
+    private Integer id;
 
     @Column(nullable = false)
     private String localNascimento;
@@ -48,16 +45,13 @@ public class DadosNascimento implements Serializable {
     @Column(nullable = false)
     private String nomeMae;
 
-    @Column(nullable = false)
+    @Column(nullable = true)
     private String nomePai;
-
-    @OneToOne
-    private Cliente dadosCliente;
 
     public DadosNascimento() {
     }
 
-    public DadosNascimento(Long id, String localNascimento, Date dataNascimento, Nacionalidade nacionalidade, String nomeMae, String nomePai) {
+    public DadosNascimento(Integer id, String localNascimento, Date dataNascimento, Nacionalidade nacionalidade, String nomeMae, String nomePai) {
         this.id = id;
         this.localNascimento = localNascimento;
         this.dataNascimento = dataNascimento;
@@ -66,16 +60,16 @@ public class DadosNascimento implements Serializable {
         this.nomePai = nomePai;
     }
 
-    public Long getId() {
-        return id;
+    public Integer getId() {
+        return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
     public String getLocalNascimento() {
-        return localNascimento;
+        return this.localNascimento;
     }
 
     public void setLocalNascimento(String localNascimento) {
@@ -83,7 +77,7 @@ public class DadosNascimento implements Serializable {
     }
 
     public Date getDataNascimento() {
-        return dataNascimento;
+        return this.dataNascimento;
     }
 
     public void setDataNascimento(Date dataNascimento) {
@@ -91,7 +85,7 @@ public class DadosNascimento implements Serializable {
     }
 
     public Nacionalidade getNacionalidade() {
-        return nacionalidade;
+        return this.nacionalidade;
     }
 
     public void setNacionalidade(Nacionalidade nacionalidade) {
@@ -99,7 +93,7 @@ public class DadosNascimento implements Serializable {
     }
 
     public String getNomeMae() {
-        return nomeMae;
+        return this.nomeMae;
     }
 
     public void setNomeMae(String nomeMae) {
@@ -107,21 +101,14 @@ public class DadosNascimento implements Serializable {
     }
 
     public String getNomePai() {
-        return nomePai;
+        return this.nomePai;
     }
 
     public void setNomePai(String nomePai) {
         this.nomePai = nomePai;
     }
 
-    public Cliente getDadosCliente() {
-        return dadosCliente;
-    }
-
-    public void setDadosCliente(Cliente dadosCliente) {
-        this.dadosCliente = dadosCliente;
-    }
-
+    /*
     @Override
     public int hashCode() {
         int hash = 5;
@@ -142,5 +129,5 @@ public class DadosNascimento implements Serializable {
         final DadosNascimento other = (DadosNascimento) obj;
         return Objects.equals(this.id, other.id);
     }
-
+*/
 }

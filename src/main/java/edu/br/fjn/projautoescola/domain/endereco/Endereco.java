@@ -13,7 +13,6 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
 
 /**
@@ -27,7 +26,7 @@ public class Endereco implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_end")
     @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idEndereco", name = "id_end")
-    private Long id;
+    private Integer id;
 
     @Column(nullable = false)
     private String logradouro;
@@ -39,35 +38,31 @@ public class Endereco implements Serializable {
     private String complemento;
     @Column(nullable = false)
     private String cep;
-    
-    @ManyToOne
-    private Cliente endCliente;
-
+   
     public Endereco() {
     }
 
-    public Endereco(Long id, String logradouro, String bairro, String numero, String complemento, String cep, Cliente endCliente) {
+    public Endereco(Integer id, String logradouro, String bairro, String numero, String complemento, String cep) {
         this.id = id;
         this.logradouro = logradouro;
         this.bairro = bairro;
         this.numero = numero;
         this.complemento = complemento;
         this.cep = cep;
-        this.endCliente = endCliente;
-    }
+            }
     
     
     
-    public Long getId() {
-        return id;
+    public Integer getId() {
+        return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
     public String getLogradouro() {
-        return logradouro;
+        return this.logradouro;
     }
 
     public void setLogradouro(String logradouro) {
@@ -75,7 +70,7 @@ public class Endereco implements Serializable {
     }
 
     public String getBairro() {
-        return bairro;
+        return this.bairro;
     }
 
     public void setBairro(String bairro) {
@@ -83,7 +78,7 @@ public class Endereco implements Serializable {
     }
 
     public String getNumero() {
-        return numero;
+        return this.numero;
     }
 
     public void setNumero(String numero) {
@@ -91,7 +86,7 @@ public class Endereco implements Serializable {
     }
 
     public String getComplemento() {
-        return complemento;
+        return this.complemento;
     }
 
     public void setComplemento(String complemento) {
@@ -99,13 +94,13 @@ public class Endereco implements Serializable {
     }
 
     public String getCep() {
-        return cep;
+        return this.cep;
     }
 
     public void setCep(String cep) {
         this.cep = cep;
     }
-
+/*
     @Override
     public int hashCode() {
         int hash = 3;
@@ -130,6 +125,6 @@ public class Endereco implements Serializable {
         }
         return true;
     }
-    
+    */
     
 }

@@ -4,9 +4,7 @@ import edu.br.fjn.projautoescola.domain.contato.Contato;
 import edu.br.fjn.projautoescola.domain.dadosnascimento.DadosNascimento;
 import edu.br.fjn.projautoescola.domain.documento.Documento;
 import edu.br.fjn.projautoescola.domain.endereco.Endereco;
-import edu.br.fjn.projautoescola.domain.pagamento.Pagamento;
 import java.io.Serializable;
-import java.util.List;
 import java.util.Objects;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,7 +13,6 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
@@ -29,9 +26,9 @@ public class Cliente implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
-    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_gerador")
-    @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idCliente", name = "id_gerador")
-    private Long idCliente;
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_ger_cliente")
+    @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idCliente", name = "id_ger_cliente")
+    private Integer idCliente;
 
     @Column(nullable = false)
     private String nome;
@@ -55,25 +52,22 @@ public class Cliente implements Serializable {
     private EstadoCivil estadoCivil;
 
     //desda linha abaixo ficará as associativas 
-    @OneToOne(mappedBy = "dadosCliente")
-    private List<DadosNascimento> dadosNascimento;
+    @OneToOne(mappedBy = "dados_cliente")
+    private DadosNascimento dadosNascimento;
 
-    @OneToOne(mappedBy = "endCliente")
-    private List<Endereco> endereco;
+    @OneToOne(mappedBy = "endereco_cliente")
+    private Endereco endereco;
 
-    @OneToOne(mappedBy = "contatoCliente")
-    private List<Contato> contato;
+    @OneToOne(mappedBy = "cliente_contato")
+    private Contato contato;
 
-    @OneToMany(mappedBy = "docCliente")
-    private List<Documento> documentos;
-
-    @OneToMany(mappedBy = "pagCliente")
-    private List<Pagamento> pagamento;
+    @OneToOne(mappedBy = "cliente_doc")
+    private Documento documentos;
 
     public Cliente() {
     }
 
-    public Cliente(Long idCliente, String nome, Escolaridade escolaridade, String profissao, CategoriaPretendida categoria, String cpf, EstadoCivil estadoCivil, List<DadosNascimento> dadosNascimento, List<Endereco> endereco, List<Contato> contato, List<Documento> documentos, List<Pagamento> pagamento) {
+    public Cliente(Integer idCliente, String nome, Escolaridade escolaridade, String profissao, CategoriaPretendida categoria, String cpf, EstadoCivil estadoCivil) {
         this.idCliente = idCliente;
         this.nome = nome;
         this.escolaridade = escolaridade;
@@ -81,23 +75,19 @@ public class Cliente implements Serializable {
         this.categoria = categoria;
         this.cpf = cpf;
         this.estadoCivil = estadoCivil;
-        this.dadosNascimento = dadosNascimento;
-        this.endereco = endereco;
-        this.contato = contato;
-        this.documentos = documentos;
-        this.pagamento = pagamento;
+     
     }
   
-    public Long getIdCliente() {
-        return idCliente;
+    public Integer getIdCliente() {
+        return this.idCliente;
     }
 
-    public void setIdCliente(Long idCliente) {
+    public void setIdCliente(Integer idCliente) {
         this.idCliente = idCliente;
     }
 
     public String getNome() {
-        return nome;
+        return this.nome;
     }
 
     public void setNome(String nome) {
@@ -105,7 +95,7 @@ public class Cliente implements Serializable {
     }
 
     public Escolaridade getEscolaridade() {
-        return escolaridade;
+        return this.escolaridade;
     }
 
     public void setEscolaridade(Escolaridade escolaridade) {
@@ -144,44 +134,36 @@ public class Cliente implements Serializable {
         this.estadoCivil = estadoCivil;
     }
 
-    public List<DadosNascimento> getDadosNascimento() {
+    public DadosNascimento getDadosNascimento() {
         return this.dadosNascimento;
     }
 
-    public void setDadosNascimento(List<DadosNascimento> dadosNascimento) {
+    public void setDadosNascimento(DadosNascimento dadosNascimento) {
         this.dadosNascimento = dadosNascimento;
     }
 
-    public List<Endereco> getEndereco() {
+    public Endereco getEndereco() {
         return this.endereco;
     }
 
-    public void setEndereco(List<Endereco> endereco) {
+    public void setEndereco(Endereco endereco) {
         this.endereco = endereco;
     }
 
-    public List<Contato> getContato() {
+    public Contato getContato() {
         return this.contato;
     }
 
-    public void setContato(List<Contato> contato) {
+    public void setContato(Contato contato) {
         this.contato = contato;
     }
 
-    public List<Documento> getDocumentos() {
-        return documentos;
+    public Documento getDocumentos() {
+        return this.documentos;
     }
 
-    public void setDocumentos(List<Documento> documentos) {
+    public void setDocumentos(Documento documentos) {
         this.documentos = documentos;
-    }
-
-    public List<Pagamento> getPagamento() {
-        return pagamento;
-    }
-
-    public void setPagamento(List<Pagamento> pagamento) {
-        this.pagamento = pagamento;
     }
     
  

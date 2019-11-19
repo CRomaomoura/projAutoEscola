@@ -10,5 +10,5 @@ package edu.br.fjn.projautoescola.domain.pagamento;
  * @author lucas
  */
 public enum FormaPagamento {
-    DEBITO,CREDITO,CARNE,DINHEIRO; 
+    DEBITO,CREDITO,DINHEIRO; 
 }

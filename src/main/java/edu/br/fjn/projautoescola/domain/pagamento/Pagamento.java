@@ -7,6 +7,7 @@ package edu.br.fjn.projautoescola.domain.pagamento;
 
 import edu.br.fjn.projautoescola.domain.cliente.Cliente;
 import java.io.Serializable;
+import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -16,6 +17,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.SequenceGenerator;
+import javax.persistence.Temporal;
 
 /**
  *
@@ -44,12 +46,16 @@ public class Pagamento implements Serializable {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private FormaPagamento formaPagamento;
-    @Column(nullable = false)
-    @ManyToOne
-    private Cliente pag_Cliente;
 
-    public Cliente getPag_Cliente() {
-        return this.pag_Cliente;
+    @Column(nullable = false)
+    @Temporal(javax.persistence.TemporalType.DATE)
+    private Date data;
+
+    @ManyToOne
+    private Cliente cliente;
+
+    public Cliente getCliente() {
+        return this.cliente;
     }
 
     public int getId() {
@@ -66,6 +72,14 @@ public class Pagamento implements Serializable {
 
     public void setValor(double valor) {
         this.valor = valor;
+    }
+
+    public Date getData() {
+        return this.data;
+    }
+
+    public void setData(Date data) {
+        this.data = data;
     }
 
     public FormaPagamento getFormaPagamento() {
