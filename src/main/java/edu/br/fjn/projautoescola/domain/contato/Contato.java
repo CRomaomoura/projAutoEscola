@@ -36,17 +36,17 @@ public class Contato implements Serializable {
     public Contato() {
     }
 
-    public Contato(int codigo, String numero, String email) {
+    public Contato(Integer codigo, String numero, String email) {
         this.codigo = codigo;
         this.numero = numero;
         this.email = email;
     }
 
-    public int getCodigo() {
+    public Integer getCodigo() {
         return this.codigo;
     }
 
-    public void setCodigo(int codigo) {
+    public void setCodigo(Integer codigo) {
         this.codigo = codigo;
     }
 

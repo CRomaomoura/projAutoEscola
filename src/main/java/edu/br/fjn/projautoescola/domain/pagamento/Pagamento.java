@@ -28,20 +28,12 @@ public class Pagamento implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    public Pagamento() {
-
-    }
-
-    public Pagamento(double valor, FormaPagamento formaPagamento) {
-        this.valor = valor;
-        this.formaPagamento = formaPagamento;
-    }
     @GeneratedValue(generator = "id_pagamento", strategy = GenerationType.SEQUENCE)
     @Id
     @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idPagamento", name = "id_pagamento")
     private Integer id;
     @Column(nullable = false)
-    private double valor;
+    private Double valor;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -54,23 +46,32 @@ public class Pagamento implements Serializable {
     @ManyToOne
     private Cliente cliente;
 
+    public Pagamento() {
+
+    }
+
+    public Pagamento(Double valor, FormaPagamento formaPagamento) {
+        this.valor = valor;
+        this.formaPagamento = formaPagamento;
+    }
+
     public Cliente getCliente() {
         return this.cliente;
     }
 
-    public int getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    public double getValor() {
+    public Double getValor() {
         return this.valor;
     }
 
-    public void setValor(double valor) {
+    public void setValor(Double valor) {
         this.valor = valor;
     }
 

@@ -21,6 +21,7 @@ import javax.persistence.SequenceGenerator;
  */
 @Entity
 public class Endereco implements Serializable {
+
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -38,7 +39,7 @@ public class Endereco implements Serializable {
     private String complemento;
     @Column(nullable = false)
     private String cep;
-   
+
     public Endereco() {
     }
 
@@ -49,10 +50,8 @@ public class Endereco implements Serializable {
         this.numero = numero;
         this.complemento = complemento;
         this.cep = cep;
-            }
-    
-    
-    
+    }
+
     public Integer getId() {
         return this.id;
     }
@@ -100,7 +99,7 @@ public class Endereco implements Serializable {
     public void setCep(String cep) {
         this.cep = cep;
     }
-/*
+    /*
     @Override
     public int hashCode() {
         int hash = 3;
@@ -125,6 +124,6 @@ public class Endereco implements Serializable {
         }
         return true;
     }
-    */
-    
+     */
+
 }

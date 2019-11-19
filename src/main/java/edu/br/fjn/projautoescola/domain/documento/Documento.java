@@ -28,7 +28,7 @@ public class Documento implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_doc")
     @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idDocumento", name = "id_doc")
-    private Long id;
+    private Integer id;
 
     @Column(nullable = false)
     private TipoDocumento tipo;
@@ -46,7 +46,7 @@ public class Documento implements Serializable {
     public Documento() {
     }
 
-    public Documento(Long id, TipoDocumento tipo, String numero, String orgaoEmissor, Date dataEmissao, Cliente docCliente) {
+    public Documento(Integer id, TipoDocumento tipo, String numero, String orgaoEmissor, Date dataEmissao, Cliente docCliente) {
         this.id = id;
         this.tipo = tipo;
         this.numero = numero;
@@ -54,11 +54,11 @@ public class Documento implements Serializable {
         this.dataEmissao = dataEmissao;
     }
 
-    public Long getId() {
+    public Integer getId() {
         return this.id;
     }
 
-    public void setId(Long id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 

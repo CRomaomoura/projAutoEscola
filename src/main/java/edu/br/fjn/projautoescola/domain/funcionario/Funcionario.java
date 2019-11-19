@@ -23,7 +23,7 @@ public class Funcionario implements Serializable {
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "id_funcionario")
     @Id
     @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_idFuncionario", name = "id_funcionario")
-    private int id;
+    private Integer id;
 
     @Column(nullable = false)
     private String usuario;
@@ -34,17 +34,17 @@ public class Funcionario implements Serializable {
     public Funcionario() {
     }
 
-    public Funcionario(int id, String usuario, String senha) {
+    public Funcionario(Integer id, String usuario, String senha) {
         this.id = id;
         this.usuario = usuario;
         this.senha = senha;
     }
 
-    public int getId() {
+    public Integer getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
@@ -64,7 +64,7 @@ public class Funcionario implements Serializable {
         this.senha = senha;
     }
 
-    public String Login(String user, String password) {
+    public String login(String user, String password) {
         //Será modificado futuramente!
         return null;
     }
