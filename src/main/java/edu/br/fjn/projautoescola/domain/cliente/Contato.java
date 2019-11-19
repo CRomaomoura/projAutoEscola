@@ -3,9 +3,8 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.br.fjn.projautoescola.domain.contato;
 
-import java.io.Serializable;
+import edu.br.fjn.projautoescola.domain.interfaces.Entidade;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -18,14 +17,14 @@ import javax.persistence.SequenceGenerator;
  * @author romao
  */
 @Entity
-public class Contato implements Serializable {
+public class Contato implements Entidade<Integer> {
 
     private static final long serialVersionUID = 1L;
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "codigo_contato")
     @SequenceGenerator(initialValue = 1, allocationSize = 1, sequenceName = "seq_codigoContato", name = "codigo_contato")
-    private Integer codigo;
+    private Integer id;
 
     @Column(nullable = false)
     private String numero;
@@ -36,18 +35,18 @@ public class Contato implements Serializable {
     public Contato() {
     }
 
-    public Contato(Integer codigo, String numero, String email) {
-        this.codigo = codigo;
+    public Contato(Integer id, String numero, String email) {
+        this.id = id;
         this.numero = numero;
         this.email = email;
     }
 
-    public Integer getCodigo() {
-        return this.codigo;
+    public Integer getId() {
+        return this.id;
     }
 
-    public void setCodigo(Integer codigo) {
-        this.codigo = codigo;
+    public void setId(Integer codigo) {
+        this.id = codigo;
     }
 
     public String getNumero() {

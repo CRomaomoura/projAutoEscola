@@ -5,9 +5,7 @@
  */
 package edu.br.fjn.projautoescola.domain.cliente;
 
-import edu.br.fjn.projautoescola.domain.cliente.Cliente;
-import java.io.Serializable;
-import java.util.Objects;
+import edu.br.fjn.projautoescola.domain.interfaces.Entidade;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -20,7 +18,7 @@ import javax.persistence.SequenceGenerator;
  * @author romao
  */
 @Entity
-public class Endereco implements Serializable {
+public class Endereco implements Entidade<Integer> {
 
     private static final long serialVersionUID = 1L;
 

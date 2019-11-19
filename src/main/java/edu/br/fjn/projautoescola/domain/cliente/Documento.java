@@ -5,8 +5,7 @@
  */
 package edu.br.fjn.projautoescola.domain.cliente;
 
-import edu.br.fjn.projautoescola.domain.cliente.Cliente;
-import java.io.Serializable;
+import edu.br.fjn.projautoescola.domain.interfaces.Entidade;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -21,7 +20,7 @@ import javax.persistence.Temporal;
  * @author romao
  */
 @Entity
-public class Documento implements Serializable {
+public class Documento implements Entidade<Integer> {
 
     private static final long serialVersionUID = 1L;
 

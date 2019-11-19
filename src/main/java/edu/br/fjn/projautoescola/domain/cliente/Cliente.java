@@ -1,7 +1,6 @@
 package edu.br.fjn.projautoescola.domain.cliente;
 
-import edu.br.fjn.projautoescola.domain.contato.Contato;
-import java.io.Serializable;
+import edu.br.fjn.projautoescola.domain.interfaces.Entidade;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.EnumType;
@@ -17,7 +16,7 @@ import javax.persistence.SequenceGenerator;
  * @author lucas
  */
 @Entity
-public class Cliente implements Serializable {
+public class Cliente implements Entidade<Integer> {
 
     private static final long serialVersionUID = 1L;
 
@@ -71,9 +70,9 @@ public class Cliente implements Serializable {
         this.categoria = categoria;
         this.cpf = cpf;
         this.estadoCivil = estadoCivil;
-     
+
     }
-  
+
     public Integer getId() {
         return this.id;
     }
@@ -161,8 +160,7 @@ public class Cliente implements Serializable {
     public void setDocumentos(Documento documentos) {
         this.documentos = documentos;
     }
-    
- 
+
 //    @Override
 //    public int hashCode() {
 //        int hash = 5;
@@ -186,5 +184,4 @@ public class Cliente implements Serializable {
 //        }
 //        return Objects.equals(this.id, other.id);
 //    }
-
 }
