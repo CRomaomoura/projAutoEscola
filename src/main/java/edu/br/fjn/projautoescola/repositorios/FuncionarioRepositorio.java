@@ -5,16 +5,16 @@
  */
 package edu.br.fjn.projautoescola.repositorios;
 
-import edu.br.fjn.projautoescola.domain.cliente.Cliente;
+import edu.br.fjn.projautoescola.domain.funcionario.Funcionario;
 import edu.br.fjn.projautoescola.repositorios.padrao.RepositorioAbstrato;
 
 /**
  *
  * @author lucas
  */
-public class ClienteRepositorio extends RepositorioAbstrato<Cliente, Integer>{
+public class FuncionarioRepositorio extends RepositorioAbstrato<Funcionario, Integer>{
  
-    public ClienteRepositorio(Class<Cliente> classe) {
+    public FuncionarioRepositorio(Class<Funcionario> classe) {
         super(classe);
     }
      

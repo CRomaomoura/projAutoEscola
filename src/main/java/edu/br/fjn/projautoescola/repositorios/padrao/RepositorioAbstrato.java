@@ -14,6 +14,7 @@ import javax.persistence.EntityManager;
  * @author romao
  * @param <E>
  * @param <I>
+
  */
 public abstract class RepositorioAbstrato<E extends Entidade<Integer>, I extends Object> {
 
@@ -86,14 +87,4 @@ public abstract class RepositorioAbstrato<E extends Entidade<Integer>, I extends
             gerenciador.close();
         }
     }
-
-    /*public List<E> listar() {
-        EntityManager em = FabricaConexao.getGerenciador();
-        Session session = (Session) em.getDelegate();
-        Criteria criteria = session.createCriteria(classe);
-        listar() < E > lista = criteria.setResultTransformer(Criteria.DISTINCT_ROOT_ENTITY).list();
-        em.close();
-        return lista;
-    }*/
-
 }

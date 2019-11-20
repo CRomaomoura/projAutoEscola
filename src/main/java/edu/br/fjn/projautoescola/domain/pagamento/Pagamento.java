@@ -6,7 +6,7 @@
 package edu.br.fjn.projautoescola.domain.pagamento;
 
 import edu.br.fjn.projautoescola.domain.cliente.Cliente;
-import java.io.Serializable;
+import edu.br.fjn.projautoescola.domain.interfaces.Entidade;
 import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -24,7 +24,7 @@ import javax.persistence.Temporal;
  * @author lucas
  */
 @Entity
-public class Pagamento implements Serializable {
+public class Pagamento implements Entidade<Integer> {
 
     private static final long serialVersionUID = 1L;
 
