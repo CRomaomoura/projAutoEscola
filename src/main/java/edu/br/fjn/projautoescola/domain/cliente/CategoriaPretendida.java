@@ -10,5 +10,5 @@ package edu.br.fjn.projautoescola.domain.cliente;
  * @author lucas
  */
 public enum CategoriaPretendida {
-    A,B,C,D,E;
+    A,B,C,D,E,AB;
 }
