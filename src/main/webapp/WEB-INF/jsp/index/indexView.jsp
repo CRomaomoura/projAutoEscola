@@ -16,7 +16,7 @@
         <header>
             <img src="img/fw.jpg" class="imgHeader">
         </header>
-        <form action="cliente/new" METHOD="POST">
+        <form action="cliente/novo" METHOD="POST">
             <div>
                 <input type="text" placeholder="Usuário" name="usuario"/>
             </div>

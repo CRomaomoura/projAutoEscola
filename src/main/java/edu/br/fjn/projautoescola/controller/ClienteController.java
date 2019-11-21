@@ -17,6 +17,8 @@ import br.com.caelum.vraptor.Post;
 @Path("cliente")
 public class ClienteController {
     
-    @Post("new")
+    @Post("novo")
     public void formView(){}
+    @Post("relatorio")
+    public void relatorioView(){}
 }

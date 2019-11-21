@@ -13,6 +13,7 @@
 </div>
 <div>
     <input type="text" placeholder="CPF" name="cpf"/>
+    <input type="submit" value="Buscar">
 </div> 
 <div>
     <select>
