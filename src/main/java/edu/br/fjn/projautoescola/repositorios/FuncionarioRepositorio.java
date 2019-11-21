@@ -14,8 +14,8 @@ import edu.br.fjn.projautoescola.repositorios.padrao.RepositorioAbstrato;
  */
 public class FuncionarioRepositorio extends RepositorioAbstrato<Funcionario, Integer>{
  
-    public FuncionarioRepositorio(Class<Funcionario> classe) {
-        super(classe);
+    public FuncionarioRepositorio() {
+        super(Funcionario.class);
     }
      
 }

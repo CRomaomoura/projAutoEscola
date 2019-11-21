@@ -6,7 +6,6 @@
 package edu.br.fjn.projautoescola.domain.funcionario;
 
 import edu.br.fjn.projautoescola.domain.interfaces.Entidade;
-import java.io.Serializable;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

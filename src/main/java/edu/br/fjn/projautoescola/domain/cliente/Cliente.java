@@ -8,6 +8,7 @@ import javax.persistence.Enumerated;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.OneToOne;
 import javax.persistence.SequenceGenerator;
 
@@ -48,15 +49,19 @@ public class Cliente implements Entidade<Integer> {
 
     //desda linha abaixo ficará as associativas 
     @OneToOne
+    @JoinColumn(name = "id_dadosNascimento")
     private DadosNascimento dadosNascimento;
 
     @OneToOne
+    @JoinColumn(name = "id_endereco")
     private Endereco endereco;
 
     @OneToOne
+    @JoinColumn(name = "id_contato")
     private Contato contato;
 
     @OneToOne
+    @JoinColumn(name = "id_documento")
     private Documento documentos;
 
     public Cliente() {

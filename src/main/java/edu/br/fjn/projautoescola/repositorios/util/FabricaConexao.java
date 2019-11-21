@@ -16,7 +16,7 @@ import javax.persistence.Persistence;
 public class FabricaConexao {
     
        private static final EntityManagerFactory fabrica
-            = Persistence.createEntityManagerFactory("");
+            = Persistence.createEntityManagerFactory("unidade-autoescola");
 
     public static EntityManager getGerenciador() {
         return fabrica.createEntityManager();
