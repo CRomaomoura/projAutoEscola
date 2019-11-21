@@ -6,17 +6,17 @@
 package edu.br.fjn.projautoescola.controller;
 
 import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Get;
+import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Post;
 
 /**
  *
  * @author lucas
  */
 @Controller
-public class IndexController {
+@Path("cliente")
+public class ClienteController {
     
-    @Get("/")
-    public void indexView(){
-    }
-    
+    @Post("new")
+    public void formView(){}
 }

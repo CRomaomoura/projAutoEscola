@@ -14,7 +14,6 @@ and open the template in the editor.
 }
 input{
     padding: 0.5%;
-    margin: 5px;
     width: 30%;
 }
 input[type="submit"]{
@@ -23,9 +22,4 @@ input[type="submit"]{
 }
 form,header{
     text-align: center;
-}
-form{
-    margin-top: 10%;
-}
-imgHeader{
 }

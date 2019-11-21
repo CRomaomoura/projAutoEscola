@@ -16,12 +16,11 @@
         <header>
             <img src="img/fw.jpg" class="imgHeader">
         </header>
-        <form action="" METHOD="POST">
+        <form action="cliente/new" METHOD="POST">
             <div>
                 <input type="text" placeholder="Usuário" name="usuario"/>
             </div>
             <div>
-                <!--<label for="user">Senha</label><br>-->
                 <input type="password" placeholder="Senha" name="senha"/>
             </div> 
             <div>
