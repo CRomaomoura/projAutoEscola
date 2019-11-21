@@ -9,6 +9,15 @@
     <input type="text" name="usuario"/>
 </div>
 <div>
+     <label> Nome da mãe: </label>
+    <input type="text" name="nomeMae" placeholder="Nome da mãe">
+</div>
+
+<div>
+     <label> Nome do pai: </label>
+    <input type="text" name="nomePai" placeholder="Nome da pai">
+</div>
+<div>
     <label>Sexo: </label>
     Masculino<input type="radio" name="sexo" value="Masculino" />
     Feminino<input type="radio" name="sexo" value="Feminino" />

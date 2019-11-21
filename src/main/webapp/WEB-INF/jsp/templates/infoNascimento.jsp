@@ -16,10 +16,3 @@
         <option>Estrangeiro(a)</option>
     </select>
 </div>
-<div>
-    <input type="text" name="nomeMae" placeholder="Nome da mãe">
-</div>
-
-<div>
-    <input type="text" name="nomePai" placeholder="Nome da pai">
-</div>
