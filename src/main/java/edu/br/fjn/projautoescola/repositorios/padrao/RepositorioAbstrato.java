@@ -8,6 +8,7 @@ package edu.br.fjn.projautoescola.repositorios.padrao;
 import edu.br.fjn.projautoescola.domain.interfaces.Entidade;
 import edu.br.fjn.projautoescola.repositorios.util.FabricaConexao;
 import javax.persistence.EntityManager;
+import org.hibernate.Session;
 
 /**
  *

@@ -7,6 +7,8 @@ package edu.br.fjn.projautoescola.repositorios;
 
 import edu.br.fjn.projautoescola.domain.cliente.Cliente;
 import edu.br.fjn.projautoescola.repositorios.padrao.RepositorioAbstrato;
+import edu.br.fjn.projautoescola.repositorios.util.FabricaConexao;
+import javax.persistence.EntityManager;
 
 /**
  *
@@ -16,6 +18,14 @@ public class ClienteRepositorio extends RepositorioAbstrato<Cliente, Integer>{
  
     public ClienteRepositorio() {
         super(Cliente.class);
+    }
+    
+    public Cliente buscarPorCpf(String cpf){
+        EntityManager gerenciador = FabricaConexao.getGerenciador();
+        Cliente cliente = (Cliente) gerenciador.createQuery("Select * from Cliente c where c.cpf = :cpf")
+                .setParameter(":cpf", cpf);
+        gerenciador.close();
+        return cliente;
     }
      
 }
