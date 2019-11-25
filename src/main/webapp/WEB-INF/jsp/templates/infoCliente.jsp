@@ -3,53 +3,64 @@
     Created on : Nov 21, 2019, 1:12:43 PM
     Author     : lucas
 --%>
+<fieldset>
+    <div>
+        <input type="text" placeholder="CPF" name="cpf"/>
+        <input type="submit" value="Buscar">
+    </div> 
 
-<div>
-    <label> Nome Completo: </label>
-    <input type="text" name="usuario"/>
-</div>
-<div>
-     <label> Nome da mãe: </label>
-    <input type="text" name="nomeMae" placeholder="Nome da mãe">
-</div>
+    <div>
+        <label> Nome Completo: </label>
+        <input type="text" name="usuario"/>
+    </div>
+    <div>
+        <label> Nome da mãe: </label>
+        <input type="text" name="nomeMae" >
+    </div>
 
-<div>
-     <label> Nome do pai: </label>
-    <input type="text" name="nomePai" placeholder="Nome da pai">
-</div>
-<div>
-    <label>Sexo: </label>
-    Masculino<input type="radio" name="sexo" value="Masculino" />
-    Feminino<input type="radio" name="sexo" value="Feminino" />
-    Outros<input type="radio" name="sexo" value="Outro" />
-</div>
-<div>
-    <input type="text" placeholder="CPF" name="cpf"/>
-    <input type="submit" value="Buscar">
-</div> 
-<div>
-    <label> Grau de Instrução: </label>
-    <select>
-        <option>Selecionar</option>
-        <option>Ensino Fundamental Incompleto</option>
-        <option>Ensino Fundamental Completo</option>
-        <option>Ensino Médio Incompleto</option>
-        <option>Ensino Médio Completo</option>
-        <option>Ensino Superior Incompleto</option>
-        <option>Ensino Superior Completo</option>
-    </select>
-</div>
-<div>
-    <input type="text" name="profissao" placeholder="Profissão">
-</div>
-<div>
-    <label> Estado Civil:</label>
-    <select>
-        <option>Casado(a)</option>
-        <option>Solteiro(a)</option>
-        <option>Divorciado(a)</option>
-    </select>
-</div>
+    <div>
+        <label> Nome do pai: </label>
+        <input type="text" name="nomePai" >
+    </div>
+    <div>
+        <label>Sexo: </label>
+        Masculino<input type="radio" name="sexo" value="Masculino" />
+        Feminino<input type="radio" name="sexo" value="Feminino" />
+        Outros<input type="radio" name="sexo" value="Outro" />
+    </div>
+    <div>
+        <label> Local nascimento :</label>
+        <input type="text" name="localNasc"/>
+    </div>
+    <div>
+        <label> Data nascimento :</label>
+        <input type="date"  name="dataNasc"/>
+    </div> 
+    <div>
+        <label> Grau de Instrução: </label>
+        <select>
+            <option>Selecionar</option>
+            <option>Ensino Fundamental Incompleto</option>
+            <option>Ensino Fundamental Completo</option>
+            <option>Ensino Médio Incompleto</option>
+            <option>Ensino Médio Completo</option>
+            <option>Ensino Superior Incompleto</option>
+            <option>Ensino Superior Completo</option>
+        </select>
+    </div>
+    <div>
+        <label> Profissão </label>
+        <input type="text" name="profissao">
+    </div>
+    <div>
+        <label> Estado Civil:</label>
+        <select>
+            <option>Casado(a)</option>
+            <option>Solteiro(a)</option>
+            <option>Divorciado(a)</option>
+        </select>
+    </div>
+</fieldset>
 <div>
     <fieldset>
         <label>Categoria Pretendida:</label>
@@ -67,8 +78,4 @@
         D<input type="radio" name="tipoCategoria" value="D" />
         E<input type="radio" name="tipoCategoria" value="E" />
     </fieldset>
-</div>
-<div>
-    <label>Profissão:</label>
-    <input type="text" name="profissao" placeholder="Profissão">
 </div>

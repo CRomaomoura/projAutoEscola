@@ -3,23 +3,31 @@
     Created on : Nov 21, 2019, 1:17:24 PM
     Author     : lucas
 --%>
+<fieldset>
+    <div>
+        <label> Tipo Documento </label>
+        <select>
+            <option>Selecione o tipo de documento</option>
+            <option>Carteira Estrangeira</option>
+            <option>RG</option>
+            <option>CTPS</option>
+            <option>Reservista</option>
+            <option>Passaport</option>
+        </select>
 
-<div>
-    Carteira Estrangeira <input type="radio" name="documento" value="" />
-    RG<input type="radio" name="documento" value="" />
-    CTPS <input type="radio" name="documento" value="" />
-    Reservista<input type="radio" name="documento" value="" />
-    Passaporte<input type="radio" name="documento" value="" />
+    </div>
+    <div>
+        <label>Numero do documento:</label>
+        <input type="text" name="numeroDoc" >
+    </div>
 
-</div>
-<div>
-    <input type="text" name="numeroDoc" placeholder="Numero do documento">
-</div>
+    <div>
+        <label>orgão emissor:</label>
+        <input type="text" name="orgao" >
+    </div>
 
-<div>
-    <input type="text" name="orgao" placeholder="Orgão emissor">
-</div>
-
-<div>
-    <input type="date" name="dataEmissao" placeholder="Data de emissão">
-</div>
+    <div>
+        <label>Data emissão:</label>
+        <input type="date" name="dataEmissao" placeholder="Data de emissão">
+    </div>
+</fieldset>

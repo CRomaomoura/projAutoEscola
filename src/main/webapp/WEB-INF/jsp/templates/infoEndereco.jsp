@@ -4,15 +4,25 @@
     Author     : lucas
 --%>
 
+<fieldset>
 
-<div>
-    <input type="text" name="bairro" placeholder="Bairro">
-</div>
+    <div>
+        <label>Logradouro:</label>
+        <input type="text" name="logradouro" >
+    </div>
+    <div>
+        <label>Numero:</label>
+        <input type="text" name="numero">
+    </div>
+    <div>
+        <label>Bairro:</label>
+        <input type="text" name="bairro" >
+    </div>
+    <div>
+        <div>
+            <label>CEP:</label>
+            <input type="text" name="cep" >
+        </div>
+    </div>
 
-<div>
-    <input type="text" name="numero" placeholder="Número">
-</div>
-
-<div>
-    <input type="text" name="logradouro" placeholder="Logradouro">
-</div>
+</fieldset>

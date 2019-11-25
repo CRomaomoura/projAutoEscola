@@ -5,14 +5,11 @@
 --%>
 
 <div>
-    <input type="text" placeholder="Local nascimento" name="localNasc"/>
-</div>
-<div>
-    <input type="date" placeholder="Data nascimento" name="dataNasc"/>
-</div> 
-<div>
-    <select>
-        <option>Brasileiro(a)</option>
-        <option>Estrangeiro(a)</option>
-    </select>
+    <fieldset>
+        <label> Nacionalidade: </label>
+        <select>
+            <option>Brasileiro(a)</option>
+            <option>Estrangeiro(a)</option>
+        </select>
+    </fieldset>
 </div>
