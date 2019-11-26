@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package edu.br.fjn.projautoescola.repositorios.util;
+package edu.br.fjn.projautoescola.util;
 
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;

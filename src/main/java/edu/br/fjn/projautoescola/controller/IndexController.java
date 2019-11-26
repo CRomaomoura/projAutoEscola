@@ -10,7 +10,7 @@ import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
 import edu.br.fjn.projautoescola.domain.funcionario.Funcionario;
-import edu.br.fjn.projautoescola.repositorios.util.FabricaConexao;
+import edu.br.fjn.projautoescola.util.FabricaConexao;
 import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.NoResultException;
@@ -29,12 +29,11 @@ public class IndexController {
     public void indexView(){}
     
     @Post("autenticacao")
-    public void login(String nome,String senha){
+    public void login(String usuario,String senha){
         EntityManager gerenciador = FabricaConexao.getGerenciador();
         try{
-        Funcionario c = gerenciador.createQuery("Select f.nome,f.senha "
-                + "from Funcionario f where f.nome = :nome and f.senha=senha",Funcionario.class)
-                .setParameter("nome", nome)
+        Funcionario c = gerenciador.createQuery("Select f from Funcionario f where f.usuario = :usuario and f.senha=:senha",Funcionario.class)
+                .setParameter("usuario", usuario)
                 .setParameter("senha", senha)
                 .getSingleResult();
                 if(c!=null){

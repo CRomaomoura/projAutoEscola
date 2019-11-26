@@ -7,7 +7,7 @@ package edu.br.fjn.projautoescola.repositorios;
 
 import edu.br.fjn.projautoescola.domain.cliente.Cliente;
 import edu.br.fjn.projautoescola.repositorios.padrao.RepositorioAbstrato;
-import edu.br.fjn.projautoescola.repositorios.util.FabricaConexao;
+import edu.br.fjn.projautoescola.util.FabricaConexao;
 import javax.persistence.EntityManager;
 
 /**

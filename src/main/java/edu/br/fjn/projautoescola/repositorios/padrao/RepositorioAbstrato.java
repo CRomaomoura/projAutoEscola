@@ -6,7 +6,7 @@
 package edu.br.fjn.projautoescola.repositorios.padrao;
 
 import edu.br.fjn.projautoescola.domain.interfaces.Entidade;
-import edu.br.fjn.projautoescola.repositorios.util.FabricaConexao;
+import edu.br.fjn.projautoescola.util.FabricaConexao;
 import javax.persistence.EntityManager;
 import org.hibernate.Session;
 
@@ -33,9 +33,6 @@ public abstract class RepositorioAbstrato<E extends Entidade<Integer>, I extends
             gerenciador.persist(entity);
             gerenciador.getTransaction().commit();
         } catch (Exception e) {
-            // Verifica se a transação está ativa ainda.
-            // Um erro pode encerrar a transação sem permitir
-            // um rollback pelo programador.
             if (gerenciador.getTransaction().isActive()) {
                 gerenciador.getTransaction().rollback();
             }
@@ -52,9 +49,6 @@ public abstract class RepositorioAbstrato<E extends Entidade<Integer>, I extends
             gerenciador.merge(ent);
             gerenciador.getTransaction().commit();
         } catch (Exception e) {
-            // Verifica se a transação está ativa ainda.
-            // Um erro pode encerrar a transação sem permitir
-            // um rollback pelo programador.
             if (gerenciador.getTransaction().isActive()) {
                 gerenciador.getTransaction().rollback();
             }
@@ -78,9 +72,6 @@ public abstract class RepositorioAbstrato<E extends Entidade<Integer>, I extends
             gerenciador.remove(ent);
             gerenciador.getTransaction().commit();
         } catch (Exception e) {
-            // Verifica se a transação está ativa ainda.
-            // Um erro pode encerrar a transação sem permitir
-            // um rollback pelo programador.
             if (gerenciador.getTransaction().isActive()) {
                 gerenciador.getTransaction().rollback();
             }
