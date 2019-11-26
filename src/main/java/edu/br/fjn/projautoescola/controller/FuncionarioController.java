@@ -6,15 +6,13 @@
 package edu.br.fjn.projautoescola.controller;
 
 import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Get;
+
 
 /**
  *
  * @author lucas
  */
 @Controller
-public class IndexController {
-    
-    @Get("/")
-    public void indexView(){}
+public class FuncionarioController {
+
 }
