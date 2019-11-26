@@ -14,7 +14,7 @@
     <body>
         <div style=" text-align: center; margin-top: 22%;">
         <h1 style="color: green;">Cadastro realizado com sucesso!</h1>
-        <form action="" METHOD="">
+        <form action="relatorio" METHOD="">
             <input type="submit" value="Gerar relatório">
         </form>
     </div>

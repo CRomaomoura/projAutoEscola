@@ -18,7 +18,7 @@
         <div id="usuarioLogado">
             <p>Bem vindo: </p>
         </div>
-        <form action="relatorio" METHOD="POST">
+        <form action="novo" METHOD="POST">
             <div id="infoCliente">
                 <%@include  file="../templates/infoCliente.jsp" %>
             </div>

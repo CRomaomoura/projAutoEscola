@@ -28,6 +28,9 @@ public class Cliente implements Entidade<Integer> {
 
     @Column(nullable = false)
     private String nome;
+    
+    @Column(nullable = false)
+    private String cpf;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -39,9 +42,6 @@ public class Cliente implements Entidade<Integer> {
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private CategoriaPretendida categoria;
-
-    @Column(nullable = false)
-    private String cpf;
 
     @Column(nullable = false)
     @Enumerated(EnumType.STRING)
@@ -70,10 +70,10 @@ public class Cliente implements Entidade<Integer> {
     public Cliente(Integer id, String nome, Escolaridade escolaridade, String profissao, CategoriaPretendida categoria, String cpf, EstadoCivil estadoCivil) {
         this.id = id;
         this.nome = nome;
+        this.cpf = cpf;
         this.escolaridade = escolaridade;
         this.profissao = profissao;
-        this.categoria = categoria;
-        this.cpf = cpf;
+        this.categoria = categoria;   
         this.estadoCivil = estadoCivil;
 
     }
