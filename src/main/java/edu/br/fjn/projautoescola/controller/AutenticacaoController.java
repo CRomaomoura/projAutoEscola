@@ -6,9 +6,10 @@
 package edu.br.fjn.projautoescola.controller;
 
 import br.com.caelum.vraptor.Controller;
-import br.com.caelum.vraptor.Path;
+import br.com.caelum.vraptor.Get;
 import br.com.caelum.vraptor.Post;
 import br.com.caelum.vraptor.Result;
+import edu.br.fjn.projautoescola.componentes.SessaoFuncionario;
 import edu.br.fjn.projautoescola.domain.funcionario.Funcionario;
 import edu.br.fjn.projautoescola.util.FabricaConexao;
 import javax.inject.Inject;
@@ -24,17 +25,20 @@ public class AutenticacaoController {
 
     @Inject
     private Result result;
-
+    
+    @Inject
+    private SessaoFuncionario sessaoFuncionario;
     @Post("autenticacao")
     public void login(String usuario, String senha) {
 
         EntityManager gerenciador = FabricaConexao.getGerenciador();
         try {
-            Funcionario c = gerenciador.createQuery("Select f from Funcionario f where f.usuario = :usuario and f.senha=:senha", Funcionario.class)
+            Funcionario f = gerenciador.createQuery("Select f from Funcionario f where f.usuario = :usuario and f.senha=:senha", Funcionario.class)
                     .setParameter("usuario", usuario)
                     .setParameter("senha", senha)
                     .getSingleResult();
-            if (c != null) {
+            if (f != null) {
+                sessaoFuncionario.setNome(usuario);
                 result.redirectTo(ClienteController.class).formView();
             }
         } catch (NoResultException e) {
@@ -43,5 +47,9 @@ public class AutenticacaoController {
             gerenciador.close();
         }
 
-    }    
+    }
+    @Get("sair")
+    public void deslogar(){
+        sessaoFuncionario.sair();
+    }
 }

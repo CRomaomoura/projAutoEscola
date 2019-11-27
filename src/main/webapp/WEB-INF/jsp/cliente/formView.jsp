@@ -9,6 +9,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
         <title>Formulário</title>
     </head>
     <body>
@@ -16,7 +17,7 @@
             <%@include file="../templates/header.jsp" %>
         </div>
         <div id="usuarioLogado">
-            <p>Bem vindo: </p>
+            <p>Bem vindo: ${sessaoFuncionario.getNome()}</p>
         </div>
         <form action="novo" METHOD="POST">
             <div id="infoCliente">
