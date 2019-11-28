@@ -10,13 +10,13 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Login</title>
-        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
     </head>
     <body>
         <header>
             <!--<img src="img/fw.jpg" class="imgHeader">-->
         </header>
-        <form action="autenticacao" METHOD="POST">
+        <form action="autenticacao" METHOD="POST" class="form-signin">
             <div>
                 <input type="text" placeholder="Usuário" name="usuario"/>
             </div>

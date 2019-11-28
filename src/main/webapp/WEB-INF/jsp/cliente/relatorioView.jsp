@@ -9,14 +9,15 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link rel="stylesheet" href="${pageContext.request.contextPath}/css/bootstrap.css">
         <title>JSP Page</title>
     </head>
     <body>
         <div style=" text-align: center; margin-top: 22%;">
-        <h1 style="color: green;">Cadastro realizado com sucesso!</h1>
-        <form action="relatorio" METHOD="">
-            <input type="submit" value="Gerar relatório">
-        </form>
-    </div>
-</body>
+            <h1 style="color: green;">Cadastro realizado com sucesso!</h1>
+            <form action="relatorio" METHOD="">
+                <input type="submit" value="Gerar relatório">
+            </form>
+        </div>
+    </body>
 </html>

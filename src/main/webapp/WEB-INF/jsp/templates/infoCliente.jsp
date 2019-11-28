@@ -3,79 +3,115 @@
     Created on : Nov 21, 2019, 1:12:43 PM
     Author     : lucas
 --%>
-<fieldset>
-    <div>
-        <input type="text" placeholder="CPF" name="cpf"/>
-        <input type="submit" value="Buscar">
-    </div> 
 
-    <div>
-        <label> Nome Completo: </label>
-        <input type="text" name="usuario"/>
-    </div>
-    <div>
-        <label> Nome da mãe: </label>
-        <input type="text" name="nomeMae" >
-    </div>
 
-    <div>
-        <label> Nome do pai: </label>
-        <input type="text" name="nomePai" >
+<div class="card container-fluid" style="width: 15%;">
+    <img src="${pageContext.request.contextPath}/img/policial.png" style="width: 100%;" class="card-img-top" alt="Avatar cliente">
+    <div class="card-body">
+        <h5>Cadastro de Cliente</h5>
+        <p>Auto Escola Direção Segura</p>
     </div>
-    <div>
-        <label>Sexo: </label>
-        Masculino<input type="radio" name="sexo" value="Masculino" />
-        Feminino<input type="radio" name="sexo" value="Feminino" />
-        Outros<input type="radio" name="sexo" value="Outro" />
+</div>
+<div class="">
+    <div class="card-header">
+        <ul class="nav nav-pills card-header-pills">
+            <li class="nav-item">
+                <a class="nav-link active">Dados Pessoais</a>
+            </li>
+        </ul>
     </div>
-    <div>
-        <label> Local nascimento :</label>
-        <input type="text" name="localNasc"/>
+    <div class="form-row container">
+        <div class="form-group col-md-6">
+            <label for="nome">Nome completo</label>
+            <input type="text" name="usuario" class="form-control" required/>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="cpf">CPF</label>
+            <input type="text"  name="cpf"  class="form-control" required/>
+        </div> 
+        <div class="form-group col-md-6">
+            <label for="nomeMae">Nome da Mãe</label>
+            <input type="text" name="nomeMae"  class="form-control" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="nomePai">Nome do Pai</label>
+            <input type="text" name="nomePai" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label for="dataNascimento">Data de Nascimento</label>
+            <input type="date" name="dataNascimento" class="form-control" required>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="localNascimento">Local Nascimento</label>
+            <input type="text" name="localNasc"  class="form-control" required/>
+        </div>
+        <div class="form-group col-md-6">
+            <label for="profissao">Profissão</label>
+            <input type="text" name="profissao" class="form-control">
+        </div>
+        <div class="form-group col-md-6">
+            <label> Grau de Instrução: </label>
+            <select class="form-control">
+                <option selected>Selecionar</option>
+                <option>Ensino Fundamental Incompleto</option>
+                <option>Ensino Fundamental Completo</option>
+                <option>Ensino Médio Incompleto</option>
+                <option>Ensino Médio Completo</option>
+                <option>Ensino Superior Incompleto</option>
+                <option>Ensino Superior Completo</option>
+            </select>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label>Sexo</label>
+            <select class="form-control">
+                <option selected>Selecionar</option>
+                <option>Masculino</option>
+                <option>Feminino</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Estado Civil</label>
+            <select class="form-control">
+                <option selected>Selecionar</option>
+                <option>Casado(a)</option>
+                <option>Solteiro(a)</option>
+                <option>Divorciado(a)</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label>Tipo de Processo</label>
+            <select class="form-control">
+                <option selected>Selecionar</option>
+                <option>Primeira Habilitação</option>
+                <option>Adição de Categoria</option>
+                <option>Mundança de Categoria</option>
+            </select>
+        </div>
+
+        <div class="form-group col-md-6">
+            <label>Categoria Pretendida:</label>
+            <select class="form-control">
+                <option selected>Selecionar</option>
+                <option>A</option>
+                <option>B</option>
+                <option>AB</option>
+                <option>C</option>
+                <option>D</option>
+                <option>E</option>
+            </select>
+        </div>
+        <div class="form-group col-md-6">
+            <label> Nacionalidade </label>
+            <select class="form-control">
+                <option selected>Selecionar</option>
+                <option>Brasileiro(a)</option>
+                <option>Estrangeiro(a)</option>
+            </select>
+        </div>
+
+        <div class="form-group col-md-6">
+            <button type="submit" class="btn btn-primary btn-lg btn-block mt-4">Próxima etapa</button>
+        </div>
     </div>
-    <div>
-        <label> Data nascimento :</label>
-        <input type="date"  name="dataNasc"/>
-    </div> 
-    <div>
-        <label> Grau de Instrução: </label>
-        <select>
-            <option>Selecionar</option>
-            <option>Ensino Fundamental Incompleto</option>
-            <option>Ensino Fundamental Completo</option>
-            <option>Ensino Médio Incompleto</option>
-            <option>Ensino Médio Completo</option>
-            <option>Ensino Superior Incompleto</option>
-            <option>Ensino Superior Completo</option>
-        </select>
-    </div>
-    <div>
-        <label> Profissão </label>
-        <input type="text" name="profissao">
-    </div>
-    <div>
-        <label> Estado Civil:</label>
-        <select>
-            <option>Casado(a)</option>
-            <option>Solteiro(a)</option>
-            <option>Divorciado(a)</option>
-        </select>
-    </div>
-</fieldset>
-<div>
-    <fieldset>
-        <label>Categoria Pretendida:</label>
-        <select>
-            <option>Selecione o tipo de processo</option>
-            <option>Primeira Habilitação</option>
-            <option>Adição de Categoria</option>
-            <option>Mundança de Categoria</option>
-        </select>
-        <br>
-        A<input type="radio" name="tipoCategoria" value="A" />
-        B<input type="radio" name="tipoCategoria" value="B" />
-        AB<input type="radio" name="tipoCategoria" value="AB" />
-        C<input type="radio" name="tipoCategoria" value="C" />
-        D<input type="radio" name="tipoCategoria" value="D" />
-        E<input type="radio" name="tipoCategoria" value="E" />
-    </fieldset>
 </div>

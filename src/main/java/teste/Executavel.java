@@ -5,6 +5,10 @@
  */
 package teste;
 
+import edu.br.fjn.projautoescola.domain.funcionario.Funcionario;
+import edu.br.fjn.projautoescola.repositorios.FuncionarioRepositorio;
+import edu.br.fjn.projautoescola.util.FabricaConexao;
+
 
 /**
  *
@@ -13,6 +17,10 @@ package teste;
 public class Executavel {
 
     public static void main(String[] args) {
-
+        Funcionario f = new Funcionario();
+        f.setUsuario("lucas");
+        f.setSenha("lucas");
+        FuncionarioRepositorio fr = (FuncionarioRepositorio) FabricaConexao.getGerenciador();
+        fr.salvar(f);
     }
 }

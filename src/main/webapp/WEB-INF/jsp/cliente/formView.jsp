@@ -23,19 +23,6 @@
             <div id="infoCliente">
                 <%@include  file="../templates/infoCliente.jsp" %>
             </div>
-            <div id="infoNascimento">
-                <%@include file="../templates/infoNascimento.jsp" %>
-            </div>
-             <div id="infoDocumento">
-                 <%@include file="../templates/infoDocumento.jsp" %>
-            </div>
-             <div id="infoEndereco">
-                 <%@include file="../templates/infoEndereco.jsp" %>
-            </div>
-             <div id="infoContato">
-                 <%@include file="../templates/infoContato.jsp" %>
-            </div>
-            <input type="submit" value="Cadastrar">
         </form>
         <div id="rodape">
             <%@include file="../templates/footer.jsp" %>
