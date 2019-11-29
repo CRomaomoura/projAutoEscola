@@ -4,11 +4,10 @@
         <provider>org.hibernate.ejb.HibernatePersistence</provider>
         <exclude-unlisted-classes>false</exclude-unlisted-classes>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/projAutoEscola"/>
-            <property name="javax.persistence.jdbc.user" value="postgres"/>
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://ec2-54-227-249-202.compute-1.amazonaws.com/ddsuvu1olc9abl"/>
+            <property name="javax.persistence.jdbc.user" value="wbgnoprihqilbp"/>
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver"/>
-            <!--<property name="javax.persistence.jdbc.password" value="root"/> -->
-            <property name="javax.persistence.jdbc.password" value="Romao83"/>
+            <property name="javax.persistence.jdbc.password" value="86e6d0f4d70c3c626118b43494517b0a165555d66de86c7fcb4592bbb0d53fd1"/>
             <property name="hibernate.hbm2ddl.auto" value="update"/>
         </properties>
     </persistence-unit>
